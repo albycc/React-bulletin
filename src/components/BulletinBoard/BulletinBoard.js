@@ -10,11 +10,12 @@ function Bulletinboard(){
     useEffect(() => {
 
         const dataList = JSON.parse(JSON.stringify(QuestionData));
+        console.log(dataList)
         setQuestionList(dataList.questions)
 
     }, [])
     return <div className={classes['bulletinboard-container']}>
-        {questionList.map(question => <ReactPost key={question.questionId} />)}
+        {questionList.map(question => <ReactPost key={question.questionId} {...question} />)}
     </div>
 }
 
