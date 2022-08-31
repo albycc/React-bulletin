@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import QuestionData from "../../data/QuestionData.json";
 import ReactPost from "../Post/ReactPost";
 
@@ -25,8 +25,6 @@ function Bulletinboard() {
     setQuestionList(copiedList);
   };
   return (
-    <Fragment>
-      <h1 className="">React Quiz Bulletin</h1>
       <div className={classes["bulletinboard-container"]}>
         {questionList.map((question) => (
           <ReactPost
@@ -36,7 +34,6 @@ function Bulletinboard() {
           />
         ))}
       </div>
-    </Fragment>
   );
 }
 

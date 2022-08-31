@@ -6,7 +6,8 @@
             "answers":["answer1", "answer2", "answer3"],
             "correctAnswerIndex":"0",
             "postLiked":false,
-            "usersAnswer":""
+            "usersAnswer":"",
+            "backgroundColour":"#90ee90"
         },
         {
             "questionId":"q2",
@@ -14,7 +15,8 @@
             "answers":["answer1", "answer2", "answer3"],
             "correctAnswerIndex":"1",
             "postLiked":false,
-            "usersAnswer":""
+            "usersAnswer":"",
+            "backgroundColour":"#90e9ee"
         },
         {
             "questionId":"q3",
@@ -22,7 +24,8 @@
             "answers":["answer1", "answer2", "answer3"],
             "correctAnswerIndex":"2",
             "postLiked":false,
-            "usersAnswer":""
+            "usersAnswer":"",
+            "backgroundColour":"#d390ee"
         }
     ]
 }
