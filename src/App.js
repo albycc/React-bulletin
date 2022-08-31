@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Bulletinboard from "./components/BulletinBoard/BulletinBoard";
+import './App.scss';
 
 function App() {
   return (

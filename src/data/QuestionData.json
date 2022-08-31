@@ -3,23 +3,26 @@
         {
             "questionId":"q1",
             "questionName":"Vad är tre fördelar med att använda React?",
-            "answer":"Det är lättare att bygga gränssnitt i en webbplats med React, tack vare dess användbara komponenter och jsx. Med hjälp av dess VirtualDOM kan man update komponenter enklare och snabbare. Den är också snabb prestanda och även SEO vänlig.",
+            "answer":"Det är lättare att bygga gränssnitt i en webbplats med React, tack vare dess användbara komponenter och jsx. Med hjälp av dess VirtualDOM kan man updatera gränsnittet enklare och snabbare. Den har också snabb prestanda och är även SEO vänlig.",
             "postLiked":false,
-            "backgroundColour":"light-green"
+            "backgroundColour":"light-green",
+            "cordinates":{"x": 0, "y":0}
         },
         {
             "questionId":"q2",
             "questionName":"Vad betyder Single Page Application och vad skiljer det från en “vanlig” webbplats?",
             "answer":"React är ett bra exempel på vad en SPA (Single Page Application) är, och vad det menas är att man bygger en webbplats med bara en sida och laddar ner all css/js. Sidan kommer att dynamiskt uppdateras utan att man behöver skicka fler html sidor. Skillanden från den traditionella (multi page application) är att du inte behöver navigera från sida till sida, utan SPA uppdaterar din sida (här React) med komponenter.",
             "postLiked":false,
-            "backgroundColour":"light-blue"
+            "backgroundColour":"light-blue",
+            "cordinates":{"x": 150, "y":450}
         },
         {
             "questionId":"q3",
             "questionName":"Nämn tre skillnader mellan React och Angular.",
-            "answer":"React är ett bibliotek utvecklat från Facebook, medan Angular är ett framework, utvecklat från Google. Angular är uppbyggt från Typescript medan React är uppbyggt från Javascript. React bara har det som kallas one-way data binding medan Angular har båda one-way och two-way.",
+            "answer":"React är ett bibliotek utvecklat från Facebook, medan Angular är ett framework, utvecklat från Google. Angular är uppbyggt från Typescript medan React är uppbyggt från Javascript. React är menat att bygga enkelt gränsnitt, medan Angular kan man säga är en slags svit att bygga en hel webbplats.",
             "postLiked":false,
-            "backgroundColour":"light-pink"
+            "backgroundColour":"light-pink",
+            "cordinates":{"x": 590, "y":200}
         }
     ]
 }

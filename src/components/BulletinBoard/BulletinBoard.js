@@ -15,6 +15,7 @@ function Bulletinboard() {
   }, []);
 
   useEffect(() => {
+    console.log('load data')
     console.log("Updated questionList", questionList);
   }, [questionList]);
 
@@ -23,6 +24,8 @@ function Bulletinboard() {
     copiedList.find(({ questionId }) => questionId === id).postLiked = true;
     setQuestionList(copiedList);
   };
+
+  console.log('render Bulletin board')
   return (
       <div className={classes["bulletinboard-container"]}>
         {questionList.map((question) => (
@@ -32,6 +35,7 @@ function Bulletinboard() {
             likePost={setPostToLiked}
           />
         ))}
+        <img className={classes['billboard-imagetext']} src={require("../../img/text-background.png")} alt="" />
       </div>
   );
 }

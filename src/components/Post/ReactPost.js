@@ -1,3 +1,4 @@
+import { memo, useRef, useState, } from "react";
 import PostLiked from "./PostLiked";
 import classes from "./ReactPost.module.scss";
 
@@ -7,17 +8,35 @@ function ReactPost({
   answer,
   postLiked,
   likePost,
-  backgroundColour
+  backgroundColour,
+  cordinates,
+  boardCord
 }) {
+  const [isMoving, setIsMoving] = useState(false);
+  const [postCord, setPostCord] = useState(cordinates);
+  const postRef = useRef();
   const likeButtonHandler = () => {
     console.log("Post liked");
     likePost(questionId);
   };
 
+  const onMouseHoverHandler = (event) => {
+    if(isMoving){
+      console.log('post cord',  postCord)
+      console.log('mouse cord', event.clientX, event.clientY)
+      setPostCord({x:event.clientX-90, y:event.clientY-180})
+
+    }
+  }
+
+  const onMousePressedPost = () => {
+    setIsMoving(prev => !prev)
+  }
+
   console.log("ReactPost", backgroundColour);
 
   return (
-    <div className={`${classes["post-container"]} ${classes[backgroundColour]}`}>
+    <div ref={postRef} onMouseUp={onMousePressedPost} onMouseMove={onMouseHoverHandler} style={{left:postCord.x, top:postCord.y}} className={`${classes["post-container"]} ${classes[backgroundColour]}`}>
       <div className={classes["post-titleheader-content"]}>
         <h2>{questionName}</h2>
       </div>
@@ -38,4 +57,4 @@ function ReactPost({
   );
 }
 
-export default ReactPost;
+export default memo(ReactPost);

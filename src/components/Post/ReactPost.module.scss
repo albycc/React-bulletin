@@ -3,6 +3,7 @@ $postSize:400px;
 
 .post-container {
   display: flex;
+  position: absolute;
   flex-direction: column;
   justify-content: flex-start;
   max-width: $postSize;
@@ -11,7 +12,8 @@ $postSize:400px;
   margin: 20px;
   padding: 5px 10px;
   box-sizing: border-box;
-  box-shadow: 5px 5px 3px rgb(189, 189, 189);
+  box-shadow: 5px 5px 3px rgba(139, 139, 139, 0.4);
+  z-index:2;
 
   .post-titleheader-content {
     font-size: 90%;
@@ -44,6 +46,11 @@ $postSize:400px;
       cursor: pointer;
       width: 30px;
       height: 30px;
+      transform: rotate(0deg);
+      transition: transform 0.2s;
+      &:hover{
+        transform: rotate(10deg);
+      }
     }
   }
 
@@ -53,6 +60,7 @@ $postSize:400px;
       transform: rotate(-2deg);
       font-size: 120%;
       font-family: 'Architects Daughter', cursive;
+      font-weight: bold;
     }
 }
 .light-green{
