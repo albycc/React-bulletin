@@ -14,16 +14,16 @@ function Bulletinboard(){
         setQuestionList(dataList)
     }, []);
 
-    useEffect(() => {console.log('update list')}, [questionList])
+    useEffect(() => {console.log('Updated questionList', questionList)}, [questionList])
 
-    const setPostToLiked = (id) => {
+    const editPostAttribute = ({id, attribute, value}) => {
         const copiedList = [...questionList];
-        copiedList.find(({questionId}) => questionId === id).postLiked = true;
+        copiedList.find(({questionId}) => questionId === id)[`${attribute}`] = value;
         setQuestionList(copiedList)
 
     }
     return <div className={classes['bulletinboard-container']}>
-        {questionList.map((question, index) => <ReactPost key={question.questionId} {...question} setPostToLiked={setPostToLiked}/>)}
+        {questionList.map(question => <ReactPost key={question.questionId} {...question} setPostAttribute={editPostAttribute}/>)}
     </div>
 }
 
