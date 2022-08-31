@@ -1,7 +1,19 @@
+import { useState } from "react";
 import PostLiked from "./PostLiked";
 import classes from "./ReactPost.module.css";
 
-function ReactPost({ questionId, questionName, answers, correctAnswerIndex, postLiked }) {
+function ReactPost({ questionId, questionName, answers, correctAnswerIndex, index, postLiked, setPostToLiked }) {
+  const [id, setId] = useState(questionId);
+  const [postIndex, setPostIndex] = useState(index);
+
+  const likeButtonHandler = () => {
+    console.log('Post liked');
+    setPostToLiked(id, postIndex)
+
+  }
+
+  console.log('ReactPost', questionId)
+
   return (
     <div className={classes["post-container"]}>
       <div>
@@ -17,7 +29,7 @@ function ReactPost({ questionId, questionName, answers, correctAnswerIndex, post
         </ul>
       </div>
       <div>
-        {postLiked ? <PostLiked /> : <button>Like</button>}
+        {postLiked ? <PostLiked /> : <button onClick={likeButtonHandler}>Like</button>}
       </div>
     </div>
   );
