@@ -1,6 +1,6 @@
 
 function PostLiked(){
-    return <p>You have liked this post!</p>
+    return <span>You have liked this post!</span>
 }
 
 export default PostLiked;

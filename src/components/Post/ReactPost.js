@@ -1,5 +1,5 @@
 import PostLiked from "./PostLiked";
-import classes from "./ReactPost.module.css";
+import classes from "./ReactPost.module.scss";
 
 function ReactPost({
   questionId,
@@ -29,10 +29,10 @@ function ReactPost({
 
   return (
     <div className={classes["post-container"]}>
-      <div>
+      <div className={classes['post-titleheader-content']}>
         <h2>{questionName}</h2>
       </div>
-      <div>
+      <div className={classes['post-main-content']}>
         <ul>
           {answers.map((answer, index) => (
             <li key={questionId + index}>
@@ -47,11 +47,11 @@ function ReactPost({
           ))}
         </ul>
       </div>
-      <div>
+      <div className={classes['post-footer-content']}>
         {postLiked ? (
           <PostLiked />
         ) : (
-          <button onClick={likeButtonHandler}>Like</button>
+          <button className={classes['like-button']} onClick={likeButtonHandler}>Like</button>
         )}
       </div>
     </div>
