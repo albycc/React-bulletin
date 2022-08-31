@@ -9,13 +9,21 @@ function Bulletinboard(){
 
     useEffect(() => {
 
-        const dataList = JSON.parse(JSON.stringify(QuestionData));
+        const dataList = JSON.parse(JSON.stringify(QuestionData)).questions;
         console.log(dataList)
-        setQuestionList(dataList.questions)
+        setQuestionList(dataList)
+    }, []);
 
-    }, [])
+    useEffect(() => {console.log('Updated questionList', questionList)}, [questionList])
+
+    const editPostAttribute = ({id, attribute, value}) => {
+        const copiedList = [...questionList];
+        copiedList.find(({questionId}) => questionId === id)[`${attribute}`] = value;
+        setQuestionList(copiedList)
+
+    }
     return <div className={classes['bulletinboard-container']}>
-        {questionList.map(question => <ReactPost key={question.questionId} {...question} />)}
+        {questionList.map(question => <ReactPost key={question.questionId} {...question} setPostAttribute={editPostAttribute}/>)}
     </div>
 }
 
