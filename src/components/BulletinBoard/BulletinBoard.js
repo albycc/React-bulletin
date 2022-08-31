@@ -18,10 +18,9 @@ function Bulletinboard() {
     console.log("Updated questionList", questionList);
   }, [questionList]);
 
-  const editPostAttribute = ({ id, attribute, value }) => {
+  const setPostToLiked = ( id) => {
     const copiedList = [...questionList];
-    copiedList.find(({ questionId }) => questionId === id)[`${attribute}`] =
-      value;
+    copiedList.find(({ questionId }) => questionId === id).postLiked = true;
     setQuestionList(copiedList);
   };
   return (
@@ -30,7 +29,7 @@ function Bulletinboard() {
           <ReactPost
             key={question.questionId}
             {...question}
-            setPostAttribute={editPostAttribute}
+            likePost={setPostToLiked}
           />
         ))}
       </div>

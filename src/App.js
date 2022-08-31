@@ -4,7 +4,7 @@ import Bulletinboard from "./components/BulletinBoard/BulletinBoard";
 function App() {
   return (
     <Fragment>
-      <h1>React Quiz Bulletin</h1>
+      <h1>React Bulletin FAQ</h1>
       <Bulletinboard />
     </Fragment>
   );
