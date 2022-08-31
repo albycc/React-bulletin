@@ -9,25 +9,21 @@ function Bulletinboard(){
 
     useEffect(() => {
 
-        const dataList = JSON.parse(JSON.stringify(QuestionData));
+        const dataList = JSON.parse(JSON.stringify(QuestionData)).questions;
         console.log(dataList)
-        setQuestionList(dataList.questions)
-
+        setQuestionList(dataList)
     }, []);
 
     useEffect(() => {console.log('update list')}, [questionList])
 
-    const setPostToLiked = (id, index) => {
-        const post = questionList.find(({questionId}) => questionId === id);
-        post.postLiked = true;
-
+    const setPostToLiked = (id) => {
         const copiedList = [...questionList];
-        copiedList.splice(index, post);
+        copiedList.find(({questionId}) => questionId === id).postLiked = true;
         setQuestionList(copiedList)
 
     }
     return <div className={classes['bulletinboard-container']}>
-        {questionList.map((question, index) => <ReactPost key={question.questionId} index={index} {...question} setPostToLiked={setPostToLiked}/>)}
+        {questionList.map((question, index) => <ReactPost key={question.questionId} {...question} setPostToLiked={setPostToLiked}/>)}
     </div>
 }
 

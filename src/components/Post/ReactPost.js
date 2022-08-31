@@ -1,15 +1,11 @@
-import { useState } from "react";
 import PostLiked from "./PostLiked";
 import classes from "./ReactPost.module.css";
 
-function ReactPost({ questionId, questionName, answers, correctAnswerIndex, index, postLiked, setPostToLiked }) {
-  const [id, setId] = useState(questionId);
-  const [postIndex, setPostIndex] = useState(index);
+function ReactPost({ questionId, questionName, answers, correctAnswerIndex, postLiked, setPostToLiked }) {
 
   const likeButtonHandler = () => {
     console.log('Post liked');
-    setPostToLiked(id, postIndex)
-
+    setPostToLiked(questionId)
   }
 
   console.log('ReactPost', questionId)

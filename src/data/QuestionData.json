@@ -5,21 +5,24 @@
             "questionName":"Vad är tre fördelar med att använda React?",
             "answers":["answer1", "answer2", "answer3"],
             "correctAnswerIndex":"0",
-            "postLiked":false
+            "postLiked":false,
+            "usersAnswer":""
         },
         {
             "questionId":"q2",
             "questionName":"Vad betyder Single Page Application och vad skiljer det från en “vanlig” webbplats?",
             "answers":["answer1", "answer2", "answer3"],
             "correctAnswerIndex":"1",
-            "postLiked":false
+            "postLiked":false,
+            "usersAnswer":""
         },
         {
             "questionId":"q3",
             "questionName":"Nämn tre skillnader mellan React och Angular.",
             "answers":["answer1", "answer2", "answer3"],
             "correctAnswerIndex":"2",
-            "postLiked":false
+            "postLiked":false,
+            "usersAnswer":""
         }
     ]
 }
