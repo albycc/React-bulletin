@@ -25,7 +25,6 @@ function Bulletinboard() {
     setQuestionList(copiedList);
   };
 
-  console.log('render Bulletin board')
   return (
       <div className={classes["bulletinboard-container"]}>
         {questionList.map((question) => (
