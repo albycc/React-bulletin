@@ -10,14 +10,8 @@ function Bulletinboard() {
 
   useEffect(() => {
     const dataList = JSON.parse(JSON.stringify(QuestionData)).questions;
-    console.log(dataList);
     setQuestionList(dataList);
   }, []);
-
-  useEffect(() => {
-    console.log('load data')
-    console.log("Updated questionList", questionList);
-  }, [questionList]);
 
   const setPostToLiked = ( id) => {
     const copiedList = [...questionList];

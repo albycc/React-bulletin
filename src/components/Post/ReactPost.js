@@ -17,8 +17,7 @@ function ReactPost({
   const postRef = useRef();
 
   const likeButtonHandler = (event) => {
-    event.stopPropagation()
-    console.log("Post liked");
+    event.stopPropagation();
     likePost(questionId);
   };
 
