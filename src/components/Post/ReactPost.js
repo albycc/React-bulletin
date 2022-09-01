@@ -1,62 +1,48 @@
+import { memo, useRef, useState, } from "react";
 import PostLiked from "./PostLiked";
 import classes from "./ReactPost.module.scss";
 
 function ReactPost({
   questionId,
   questionName,
-  answers,
+  answer,
   postLiked,
-  usersAnswer,
-  setPostAttribute,
-  correctAnswerIndex,
+  likePost,
+  backgroundColour,
+  cordinates
 }) {
-  const likeButtonHandler = () => {
-    console.log("Post liked");
-    setPostAttribute({ id: questionId, attribute: "postLiked", value: true });
+  const [isMoving, setIsMoving] = useState(false);
+  const [postCord, setPostCord] = useState(cordinates);
+  const [cordOffset, setCordOffset] = useState({})
+  const postRef = useRef();
+
+  const likeButtonHandler = (event) => {
+    event.stopPropagation();
+    likePost(questionId);
   };
 
-  const answersButtonHandler = (event) => {
-    const indexValue = event.target.dataset.answerIndex;
-    setPostAttribute({
-      id: questionId,
-      attribute: "usersAnswer",
-      value: indexValue,
-    });
-  };
+  const onMouseHoverHandler = (event) => {
+    if(isMoving){
+      setPostCord({x:event.clientX-cordOffset.xOffset, y:event.clientY-cordOffset.yOffset})
 
-  console.log("ReactPost", questionId);
+    }
+  }
 
-  const userHasAnswered = usersAnswer === "" ? false : true;
-  const answerClassStyle = usersAnswer === correctAnswerIndex ? 'right-answer' : 'wrong-answer';
+  const onMousePressedPost = (event) => {
+    setIsMoving(prev => !prev);
+    const xOffset = event.clientX - postCord.x;
+    const yOffset = event.clientY - postCord.y;
+    setCordOffset({xOffset, yOffset})
+  }
 
-  console.log('answerClassStyle', answerClassStyle)
 
   return (
-    <div className={classes["post-container"]}>
+    <div ref={postRef} onClick={onMousePressedPost} onMouseMove={onMouseHoverHandler} style={{left:postCord.x, top:postCord.y}} className={`${classes["post-container"]} ${classes[backgroundColour]} ${isMoving ? classes['post-moving'] : ''}`}>
       <div className={classes["post-titleheader-content"]}>
         <h2>{questionName}</h2>
       </div>
       <div className={classes["post-main-content"]}>
-        <ul className={classes["question-button-list"]}>
-          {answers.map((answer, index) => (
-            <li
-              key={questionId + index}
-              className={classes["question-listitem"]}
-            >
-              {!userHasAnswered ?
-                <button
-                  data-answer-index={index}
-                  onClick={answersButtonHandler}
-                  className={`${classes['answer-style']} ${classes["question-button"]}`}
-                  disabled={userHasAnswered}
-                >
-                  {answer}
-                </button> :
-                <p className={`${classes['answer-style']} ${classes['answered-paragraph']} ${ index === +usersAnswer && `${classes[answerClassStyle]}`} `}>{answer}</p>
-              }
-            </li>
-          ))}
-        </ul>
+        <p>{answer}</p>
       </div>
       <div className={classes["post-footer-content"]}>
         {postLiked ? (
@@ -72,4 +58,4 @@ function ReactPost({
   );
 }
 
-export default ReactPost;
+export default memo(ReactPost);

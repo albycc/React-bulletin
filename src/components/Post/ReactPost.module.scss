@@ -1,22 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Archivo+Black&display=swap');
+$postSize:400px;
+
 .post-container {
   display: flex;
+  position: absolute;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: 320px;
-  min-height: 320px;
-  max-height: 320px;
-  background-color: #90ee90;
+  width: $postSize;
+  height: $postSize;
   margin: 20px;
-  padding: 5px;
+  padding: 5px 10px;
   box-sizing: border-box;
+  box-shadow: 5px 5px 3px rgba(139, 139, 139, 0.4);
+  z-index:1;
+
+  & div.post-moving{
+    z-index:4
+  }
 
   .post-titleheader-content {
-    font-family: 'Courier New', Courier, monospace;
     font-size: 90%;
+    font-family: 'Architects Daughter', cursive;
+    // background-color: orange;
+    max-height:$postSize*0.3;
   }
 
   .post-main-content {
     background-color: inherit;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.1em;
+    // background-color: pink;
+    max-height:$postSize*0.6;
   }
 
   .post-footer-content {
@@ -25,6 +39,7 @@
     justify-self: flex-end;
     margin-top:auto;
     margin-bottom:5px;
+    // background-color: orange;
     .like-button {
       border: none;
       background-image: url("../../img/like-icon.svg");
@@ -34,49 +49,29 @@
       cursor: pointer;
       width: 30px;
       height: 30px;
+      transform: rotate(0deg);
+      transition: transform 0.2s;
+      &:hover{
+        transform: rotate(10deg);
+      }
     }
   }
 
-  .question-button-list {
-    margin: 0;
-    padding: 0;
-    .question-listitem {
-      list-style: none;
-      margin: 15px 5px;
-      .answer-style {
-        margin:0px;
-        width: 100%;
-        text-align: left;
-        font-size: 1.1em;
-        cursor: default;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .question-button {
-        border: none;
-        background-color: inherit;
-        cursor: pointer;
-        padding:0px;
-        &:hover:enabled {
-          color: rgb(172, 172, 172);
-        }
-      }
-      .answered-paragraph{
-        color: rgb(32, 32, 32);
-      }
-        & .right-answer {
-          color: green;
-          text-decoration: underline;
-        }
-        & .wrong-answer {
-          color: red;
-          text-decoration:line-through;
-        }
-    }
-  }
-
+  
   .react-like-text {
-    color: green;
-    transform: rotate(-2deg);
-    font-size: 120%;
-  }
+      color: green;
+      transform: rotate(-2deg);
+      font-size: 120%;
+      font-family: 'Architects Daughter', cursive;
+      font-weight: bold;
+    }
+}
+.light-green{
+  background-color: #90ee90;
+}
+.light-blue{
+  background-color:#90e9ee;
+}
+.light-pink{
+  background-color: #d390ee;
 }
