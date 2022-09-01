@@ -14,7 +14,7 @@ $postSize:400px;
   box-shadow: 5px 5px 3px rgba(139, 139, 139, 0.4);
   z-index:1;
 
-  & div.post-moving{
+  &.post-moving{
     z-index:4
   }
 
