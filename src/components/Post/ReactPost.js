@@ -9,8 +9,7 @@ function ReactPost({
   postLiked,
   likePost,
   backgroundColour,
-  cordinates,
-  boardCord
+  cordinates
 }) {
   const [isMoving, setIsMoving] = useState(false);
   const [postCord, setPostCord] = useState(cordinates);
@@ -37,8 +36,9 @@ function ReactPost({
     setCordOffset({xOffset, yOffset})
   }
 
+
   return (
-    <div ref={postRef} onClick={onMousePressedPost} onMouseMove={onMouseHoverHandler} style={{left:postCord.x, top:postCord.y}} className={`${classes["post-container"]} ${classes[backgroundColour]}`}>
+    <div ref={postRef} onClick={onMousePressedPost} onMouseMove={onMouseHoverHandler} style={{left:postCord.x, top:postCord.y}} className={`${classes["post-container"]} ${classes[backgroundColour]} ${isMoving ? classes['post-moving'] : ''}`}>
       <div className={classes["post-titleheader-content"]}>
         <h2>{questionName}</h2>
       </div>

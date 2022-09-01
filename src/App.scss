@@ -4,8 +4,19 @@
 
 h1{
     color:white;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 body{
-    background-color: #4675BA;
+    background-color: #16273f;
+}
+
+.header-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .react-icon{
+        width:60px;
+        height:60px;
+    }
 }

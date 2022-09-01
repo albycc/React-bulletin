@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Archivo+Black&display=swap');
 $postSize:400px;
 
 .post-container {
@@ -12,7 +12,11 @@ $postSize:400px;
   padding: 5px 10px;
   box-sizing: border-box;
   box-shadow: 5px 5px 3px rgba(139, 139, 139, 0.4);
-  z-index:2;
+  z-index:1;
+
+  & div.post-moving{
+    z-index:4
+  }
 
   .post-titleheader-content {
     font-size: 90%;

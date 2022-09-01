@@ -11,7 +11,7 @@
         {
             "questionId":"q2",
             "questionName":"Vad betyder Single Page Application och vad skiljer det från en “vanlig” webbplats?",
-            "answer":"React är ett bra exempel på vad en SPA (Single Page Application) är, och vad det menas är att man bygger en webbplats med bara en sida och laddar ner all css/js. Sidan kommer att dynamiskt uppdateras utan att man behöver skicka fler html sidor. Skillanden från den traditionella (multi page application) är att du inte behöver navigera från sida till sida, utan SPA uppdaterar din sida (här React) med komponenter.",
+            "answer":"React är ett bra exempel på vad man kan bygga en SPA (Single Page Application). Vad SPA betyder är att man bygger en webbplats med bara en sida och laddar ner all css/js. Sidan kommer att dynamiskt uppdateras utan att man behöver skicka fler html sidor. Skillanden från den traditionella (multi page application) är att du inte behöver navigera från sida till sida, utan SPA uppdaterar din sida när komponenter ändras.",
             "postLiked":false,
             "backgroundColour":"light-blue",
             "cordinates":{"x": 150, "y":450}
@@ -19,7 +19,7 @@
         {
             "questionId":"q3",
             "questionName":"Nämn tre skillnader mellan React och Angular.",
-            "answer":"React är ett bibliotek utvecklat från Facebook, medan Angular är ett framework, utvecklat från Google. Angular är uppbyggt från Typescript medan React är uppbyggt från Javascript. React är menat att bygga enkelt gränsnitt, medan Angular kan man säga är en slags svit att bygga en hel webbplats.",
+            "answer":"React är ett bibliotek utvecklat från Facebook, medan Angular är ett framework, utvecklat från Google. Angular är uppbyggt från Typescript medan React är uppbyggt från Javascript. React är menat att enkelt bygga gränsnitt, medan Angular kan man säga är en slags svit att bygga en hel webbplats.",
             "postLiked":false,
             "backgroundColour":"light-pink",
             "cordinates":{"x": 590, "y":200}
