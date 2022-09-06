@@ -9,7 +9,8 @@ function ReactPost({
   postLiked,
   likePost,
   backgroundColour,
-  cordinates
+  cordinates,
+  changeZindex
 }) {
   const [isMoving, setIsMoving] = useState(false);
   const [postCord, setPostCord] = useState(cordinates);
@@ -24,7 +25,6 @@ function ReactPost({
   const onMouseHoverHandler = (event) => {
     if(isMoving){
       setPostCord({x:event.clientX-cordOffset.xOffset, y:event.clientY-cordOffset.yOffset})
-
     }
   }
 
@@ -32,7 +32,8 @@ function ReactPost({
     setIsMoving(prev => !prev);
     const xOffset = event.clientX - postCord.x;
     const yOffset = event.clientY - postCord.y;
-    setCordOffset({xOffset, yOffset})
+    setCordOffset({xOffset, yOffset});
+    changeZindex(questionId)
   }
 
 
